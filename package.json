@@ -4,12 +4,13 @@
     "description": "",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "type-check": "tsc",
+        "type-check": "tsc --noEmit",
         "typegen": "wrangler types",
         "format": "prettier --write '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
         "format:check": "prettier --check '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
         "deploy": "wrangler deploy --env dev",
-        "build": "node esbuild.config.ts",
+        "deploy:pages": "pnpm run build && wrangler pages deploy dist",
+        "build": "node build.ts",
         "dev": "pnpm run build && pnpm exec serve dist"
     },
     "keywords": [],
@@ -24,6 +25,7 @@
     },
     "type": "module",
     "devDependencies": {
+        "@types/node": "^26.1.1",
         "@types/react": "^19.2.17",
         "@types/react-dom": "^19.2.3",
         "esbuild": "^0.28.1",

@@ -1,0 +1,38 @@
+{
+    "name": "hello-pages",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "type-check": "tsc",
+        "typegen": "wrangler types",
+        "format": "prettier --write '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
+        "format:check": "prettier --check '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
+        "deploy": "wrangler deploy --env dev",
+        "build": "node esbuild.config.ts",
+        "dev": "pnpm run build && pnpm exec serve dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devEngines": {
+        "packageManager": {
+            "name": "pnpm",
+            "version": "^11.3.0",
+            "onFail": "download"
+        }
+    },
+    "type": "module",
+    "devDependencies": {
+        "@types/react": "^19.2.17",
+        "@types/react-dom": "^19.2.3",
+        "esbuild": "^0.28.1",
+        "esbuild-plugin-copy": "^2.1.1",
+        "prettier": "^3.9.6",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "serve": "^14.2.6",
+        "typescript": "^7.0.2",
+        "wrangler": "^4.114.0"
+    }
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { Layout } from "../components/Layout.js";
-import { mount } from "../lib/mount.js";
+import { Layout } from "../../components/Layout.js";
+import { mount } from "../../lib/mount.js";
 
 function Page() {
     const [count, setCount] = useState(0);

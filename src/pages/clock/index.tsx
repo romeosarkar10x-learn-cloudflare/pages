@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-import { Card, Grid } from "../components/Card.js";
-import { Layout } from "../components/Layout.js";
-import { mount } from "../lib/mount.js";
+import { Card, Grid } from "../../components/Card.js";
+import { Layout } from "../../components/Layout.js";
+import { mount } from "../../lib/mount.js";
 
 const ZONES = [
     { city: "Kolkata", zone: "Asia/Kolkata", accent: "#fbbf24" },

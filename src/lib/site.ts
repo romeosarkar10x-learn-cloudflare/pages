@@ -5,16 +5,16 @@ export type NavItem = {
     title: string;
 };
 
-export const NAV: NavItem[] = [
-    { slug: "index", label: "Home", title: "Pagelab" },
-    { slug: "about", label: "About", title: "About · Pagelab" },
-    { slug: "gallery", label: "Gallery", title: "Gallery · Pagelab" },
-    { slug: "counter", label: "Counter", title: "Counter · Pagelab" },
-    { slug: "todos", label: "Todos", title: "Todos · Pagelab" },
-    { slug: "colors", label: "Colors", title: "Colors · Pagelab" },
-    { slug: "clock", label: "Clock", title: "Clock · Pagelab" },
-    { slug: "dashboard", label: "Dashboard", title: "Dashboard · Pagelab" },
-];
+function capitalize(word: string) {
+    return word.slice(0, 1).toUpperCase() + word.slice(1);
+}
+
+export const NAV: NavItem[] = (function () {
+    const routes = __ROUTES as string[];
+    return routes.map((v) => ({ slug: v, label: capitalize(v.slice(0, -1)), title: v }));
+})();
+
+// export const NAV: NavItem[] = ;
 
 export function hrefFor(slug: string): string {
     return slug === "index" ? "/" : `/${slug}`;

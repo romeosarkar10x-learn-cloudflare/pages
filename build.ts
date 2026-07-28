@@ -34,21 +34,36 @@ try {
     process.exit(-1);
 }
 
+function getRouteName(entryPoint: string) {
+    const route = entryPoint.slice(0, -9);
+
+    if (route.endsWith("/")) {
+        return route;
+    }
+
+    return route + "/";
+}
 const entryPoints = contents.filter((v) => v.endsWith("index.tsx"));
+const routes = entryPoints.map(getRouteName);
 
 entryPoints.forEach((entryPoint) => {
-    const dir = path.dirname(entryPoint);
+    const directory = path.dirname(entryPoint);
     const fileName = path.basename(entryPoint).slice(0, -4);
-    const outputDirectory = path.join(OUT_DIR, dir);
+    const outputDirectory = path.join(OUT_DIR, directory);
 
     esbuild.build({
         entryPoints: [path.join(DIR, entryPoint)],
         bundle: true,
         minify: true,
+        jsx: "automatic",
         // sourcemap: true,
         format: "esm",
         target: ["es2022"],
         outdir: outputDirectory,
+        define: {
+            __ROUTES: JSON.stringify(routes),
+            __CURRENT_ROUTE: JSON.stringify(getRouteName(entryPoint)),
+        },
     });
 
     writeHtml(fileName, outputDirectory);

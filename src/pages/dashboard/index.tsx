@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { Card, Grid } from "../../components/Card.js";
-import { Layout } from "../../components/Layout.js";
+import { Card, Grid } from "../../components/card.js";
+import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];

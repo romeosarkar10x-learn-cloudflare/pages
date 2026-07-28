@@ -10,7 +10,7 @@ function capitalize(word: string) {
 }
 
 export const NAV: NavItem[] = (function () {
-    const routes = __ROUTES as string[];
+    const routes = __ROUTES;
     return routes.map((v) => ({ slug: v, label: capitalize(v.slice(0, -1)), title: v }));
 })();
 

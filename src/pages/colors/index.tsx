@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Layout } from "../../components/Layout.js";
+import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
 
 type Swatch = {

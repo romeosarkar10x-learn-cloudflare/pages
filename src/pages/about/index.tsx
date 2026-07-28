@@ -1,5 +1,5 @@
-import { Card, Grid } from "../../components/Card.js";
-import { Layout } from "../../components/Layout.js";
+import { Card, Grid } from "../../components/card.js";
+import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
 
 const STEPS = [

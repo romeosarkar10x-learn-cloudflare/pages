@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
+import type { PageMetadata } from "../../types/page-metadata.js";
 
 function Page() {
     const [count, setCount] = useState(0);
@@ -80,3 +81,9 @@ function Page() {
 }
 
 mount(<Page />);
+
+export const metadata: PageMetadata = {
+    slug: "counter",
+    label: "Counter",
+    title: "Counter · Pagelab",
+};

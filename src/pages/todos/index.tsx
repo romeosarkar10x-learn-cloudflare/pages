@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
+import type { PageMetadata } from "../../types/page-metadata.js";
 
 type Todo = {
     id: string;
@@ -126,3 +127,9 @@ function Page() {
 }
 
 mount(<Page />);
+
+export const metadata: PageMetadata = {
+    slug: "todos",
+    label: "Todos",
+    title: "Todos · Pagelab",
+};

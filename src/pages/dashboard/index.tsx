@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card, Grid } from "../../components/card.js";
 import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
+import type { PageMetadata } from "../../types/page-metadata.js";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
@@ -115,3 +116,9 @@ function Page() {
 }
 
 mount(<Page />);
+
+export const metadata: PageMetadata = {
+    slug: "dashboard",
+    label: "Dashboard",
+    title: "Dashboard · Pagelab",
+};

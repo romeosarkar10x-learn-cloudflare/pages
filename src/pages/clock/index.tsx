@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Card, Grid } from "../../components/card.js";
 import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
+import type { PageMetadata } from "../../types/page-metadata.js";
 
 const ZONES = [
     { city: "Kolkata", zone: "Asia/Kolkata", accent: "#fbbf24" },
@@ -80,3 +81,9 @@ function Page() {
 }
 
 mount(<Page />);
+
+export const metadata: PageMetadata = {
+    slug: "clock",
+    label: "Clock",
+    title: "Clock · Pagelab",
+};

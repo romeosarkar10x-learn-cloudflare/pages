@@ -1,6 +1,7 @@
 import { Card, Grid } from "../../components/card.js";
 import { Layout } from "../../components/layout.js";
 import { mount } from "../../lib/mount.js";
+import type { PageMetadata } from "../../types/page-metadata.js";
 
 const STEPS = [
     {
@@ -117,3 +118,9 @@ function Page() {
 }
 
 mount(<Page />);
+
+export const metadata: PageMetadata = {
+    slug: "about",
+    label: "About",
+    title: "About · Pagelab",
+};

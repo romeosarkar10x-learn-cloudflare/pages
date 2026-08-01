@@ -2,15 +2,30 @@ import fs from "node:fs";
 import path from "node:path";
 import z from "zod";
 import { type PageMetadata, PageMetadataSchema } from "../../src/schemas/page-metadata.ts";
+import { BUILD_CONFIG } from "../config.ts";
 
 export function getRouteName(entryPoint: string) {
-    const route = entryPoint.slice(0, -9);
+    let baseUrl = BUILD_CONFIG.BASE_URL;
 
-    if (route.endsWith("/")) {
-        return route;
+    if (!baseUrl.startsWith("/")) {
+        baseUrl = "/" + baseUrl;
     }
 
-    return route + "/";
+    if (!baseUrl.endsWith("/")) {
+        baseUrl += "/";
+    }
+
+    let route = entryPoint.slice(0, -9);
+
+    if (!route.endsWith("/")) {
+        route += "/";
+    }
+
+    if (route.startsWith("/")) {
+        route = route.slice(1);
+    }
+
+    return baseUrl + route;
 }
 
 export async function getPages(searchPath: string) {

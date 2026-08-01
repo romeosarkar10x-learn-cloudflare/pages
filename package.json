@@ -4,7 +4,7 @@
     "description": "",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "type-check": "pnpm run typegen && tsc",
+        "type-check": "pnpm run typegen && tsc -p tsconfig.app.json && tsc -p tsconfig.node.json",
         "typegen": "node scripts/typegen.ts",
         "format": "prettier --write '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
         "format:check": "prettier --check '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",

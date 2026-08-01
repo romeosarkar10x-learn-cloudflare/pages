@@ -4,4 +4,6 @@ export const metadata: PageMetadata = {
     slug: "colors",
     label: "Colors",
     title: "Colors · Pagelab",
-};
+    description: "Roll a random palette and copy any hex with one click.",
+    accent: "#fbbf24",
+} as const;

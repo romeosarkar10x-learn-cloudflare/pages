@@ -1,4 +1,4 @@
-import { PageMetadata } from "../../schemas/page-metadata";
+import type { PageMetadata } from "../../schemas/page-metadata.ts";
 
 export const metadata: PageMetadata = {
     slug: "todos",

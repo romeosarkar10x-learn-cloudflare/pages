@@ -12,7 +12,7 @@ async function typegen() {
     export type __CurrentRoute = keyof __PagesType;
     `;
 
-    fs.mkdirSync(path.basename(BUILD_CONFIG.TYPEGEN_OUT_FILE), { recursive: true });
+    fs.mkdirSync(path.dirname(BUILD_CONFIG.TYPEGEN_OUT_FILE), { recursive: true });
     fs.writeFileSync(BUILD_CONFIG.TYPEGEN_OUT_FILE, contents);
 }
 

@@ -6,4 +6,6 @@ export const metadata: PageMetadata = {
     title: "Counter · Pagelab",
     description: "The smallest possible React state demo, with an event log.",
     accent: "#22d3ee",
+    views: 1500,
+    ms: 45,
 } as const;

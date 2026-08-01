@@ -6,4 +6,6 @@ export const metadata: PageMetadata = {
     title: "About · Pagelab",
     description: "What this project is and how the build pipeline fits together.",
     accent: "#7c5cff",
+    views: 733,
+    ms: 36,
 } as const;

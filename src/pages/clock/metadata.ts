@@ -6,4 +6,6 @@ export const metadata: PageMetadata = {
     title: "Clock · Pagelab",
     description: "A live ticking clock plus a handful of world timezones.",
     accent: "#60a5fa",
+    views: 1288,
+    ms: 39,
 } as const;

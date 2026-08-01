@@ -6,6 +6,8 @@ export const PageMetadataSchema = z.object({
     title: z.string(),
     description: z.string(),
     accent: z.string(),
+    views: z.number(),
+    ms: z.number(),
 });
 
 export type PageMetadata = z.infer<typeof PageMetadataSchema>;

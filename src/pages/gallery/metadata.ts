@@ -6,4 +6,6 @@ export const metadata: PageMetadata = {
     title: "Gallery · Pagelab",
     description: "A grid of pure-CSS gradient art. Click a tile to blow it up.",
     accent: "#f472b6",
+    views: 2190,
+    ms: 58,
 } as const;

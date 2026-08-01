@@ -22,7 +22,7 @@ jobs:
             - name: Install dependencies
               run: pnpm install
 
-            - name: Generate wrangler types
+            - name: Generate types
               run: pnpm run typegen
 
             - name: Type check

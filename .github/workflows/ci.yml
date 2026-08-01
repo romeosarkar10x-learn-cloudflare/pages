@@ -1,0 +1,13 @@
+name: CI
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    format_check:
+        uses: ./.github/workflows/format-check.yml
+
+    type_check:
+        needs: format_check
+        uses: ./.github/workflows/type-check.yml

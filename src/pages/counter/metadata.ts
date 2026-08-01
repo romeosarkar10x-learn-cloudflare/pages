@@ -1,4 +1,4 @@
-import type { PageMetadata } from "../../types/page-metadata.js";
+import type { PageMetadata } from "../../schemas/page-metadata.ts";
 
 export const metadata: PageMetadata = {
     slug: "counter",

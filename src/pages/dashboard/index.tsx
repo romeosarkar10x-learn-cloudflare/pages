@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import { Card, Grid } from "../../components/card.js";
-import { Layout } from "../../components/layout.js";
-import { mount } from "../../lib/mount.js";
+import { Card, Grid } from "../../components/card.tsx";
+import { Layout } from "../../components/layout.tsx";
+import { mount } from "../../lib/mount.tsx";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 

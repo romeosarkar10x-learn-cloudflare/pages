@@ -1,7 +1,7 @@
-import { Card, Grid } from "../components/card.js";
-import { Layout } from "../components/layout.js";
-import { mount } from "../lib/mount.js";
-import { hrefFor, NAV } from "../lib/site.js";
+import { Card, Grid } from "../components/card.tsx";
+import { Layout } from "../components/layout.tsx";
+import { mount } from "../lib/mount.tsx";
+import type { PageMetadata } from "../schemas/page-metadata.ts";
 
 const BLURBS: Record<string, { text: string; accent: string }> = {
     about: { text: "What this project is and how the build pipeline fits together.", accent: "#7c5cff" },

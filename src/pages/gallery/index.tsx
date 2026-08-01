@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import { Layout } from "../../components/layout.js";
-import { mount } from "../../lib/mount.js";
+import { Layout } from "../../components/layout.tsx";
+import { mount } from "../../lib/mount.tsx";
 
 type Art = {
     name: string;

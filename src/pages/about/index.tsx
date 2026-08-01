@@ -1,6 +1,6 @@
-import { Card, Grid } from "../../components/card.js";
-import { Layout } from "../../components/layout.js";
-import { mount } from "../../lib/mount.js";
+import { Card, Grid } from "../../components/card.tsx";
+import { Layout } from "../../components/layout.tsx";
+import { mount } from "../../lib/mount.tsx";
 
 const STEPS = [
     {

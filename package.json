@@ -4,13 +4,13 @@
     "description": "",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "type-check": "tsc --noEmit",
-        "typegen": "wrangler types",
+        "type-check": "pnpm run typegen && tsc",
+        "typegen": "node scripts/typegen.ts",
         "format": "prettier --write '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
         "format:check": "prettier --check '**/*.{ts,tsx,html,css,json,jsonc,yml,yaml}'",
         "deploy": "wrangler deploy --env dev",
         "deploy:pages": "pnpm run build && wrangler pages deploy dist",
-        "build": "node build.ts",
+        "build": "node scripts/build.ts",
         "dev": "pnpm run build && pnpm exec serve dist"
     },
     "keywords": [],

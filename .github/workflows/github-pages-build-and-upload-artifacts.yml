@@ -1,6 +1,6 @@
 name: Build and upload artifact
-on:
-    workflow_call:
+
+on: workflow_call
 
 jobs:
     build_and_upload_artifact:

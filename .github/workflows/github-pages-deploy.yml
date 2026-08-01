@@ -1,6 +1,6 @@
 name: Deploy to Github Pages
-on:
-    workflow_call:
+
+on: workflow_call
 
 jobs:
     deploy_to_github_pages:

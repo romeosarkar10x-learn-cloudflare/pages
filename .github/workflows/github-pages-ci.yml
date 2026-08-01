@@ -1,8 +1,6 @@
 name: Github Pages CI
 
-on:
-    push:
-        branches: [main]
+on: workflow_call
 
 jobs:
     build_and_upload_artifacts:

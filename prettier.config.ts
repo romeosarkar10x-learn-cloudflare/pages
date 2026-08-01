@@ -5,6 +5,7 @@ const config: Config = {
     tabWidth: 4,
     printWidth: 120,
     endOfLine: "lf",
+    singleQuote: false,
 };
 
 export default config;

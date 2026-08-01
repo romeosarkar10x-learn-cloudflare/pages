@@ -2,7 +2,6 @@ import { Card, Grid } from "../components/card.js";
 import { Layout } from "../components/layout.js";
 import { mount } from "../lib/mount.js";
 import { hrefFor, NAV } from "../lib/site.js";
-import type { PageMetadata } from "../types/page-metadata.js";
 
 const BLURBS: Record<string, { text: string; accent: string }> = {
     about: { text: "What this project is and how the build pipeline fits together.", accent: "#7c5cff" },
@@ -48,9 +47,3 @@ function Page() {
 }
 
 mount(<Page />);
-
-export const metadata: PageMetadata = {
-    slug: "index",
-    label: "Home",
-    title: "Pagelab",
-};

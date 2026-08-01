@@ -12,7 +12,7 @@ jobs:
         needs: format_check
         uses: ./.github/workflows/type-check.yml
 
-    github_pages:
+    github_pages_ci:
         needs: type_check
         uses: ./.github/workflows/github-pages-ci.yml
         permissions:

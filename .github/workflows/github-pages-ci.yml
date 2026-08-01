@@ -4,11 +4,11 @@ on: workflow_call
 
 jobs:
     build_and_upload_artifacts:
-        uses: ./github/workflows/github-pages/build-and-upload-artifacts.yml
+        uses: ./.github/workflows/github-pages-build-and-upload-artifacts.yml
 
-    type_check:
+    deploy_to_github_pages:
         needs: build_and_upload_artifacts
-        uses: ./github/workflows/github-pages/deploy.yml
+        uses: ./.github/workflows/github-pages-deploy.yml
         permissions:
             pages: write
             id-token: write

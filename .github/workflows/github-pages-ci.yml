@@ -7,7 +7,7 @@ jobs:
         uses: ./.github/workflows/build-and-upload-artifact-for-github-pages.yml
 
     deploy_to_github_pages:
-        needs: build_and_upload_artifacts
+        needs: build_and_upload_artifacts_for_github_pages
         uses: ./.github/workflows/deploy-to-github-pages.yml
         permissions:
             pages: write

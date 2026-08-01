@@ -14,7 +14,7 @@ jobs:
 
     github_pages:
         needs: type_check
-        uses: ./github/workflows/github-pages/ci.yml
+        uses: ./.github/workflows/github-pages/ci.yml
         permissions:
             pages: write
             id-token: write

@@ -3,12 +3,12 @@ name: Github Pages CI
 on: workflow_call
 
 jobs:
-    build_and_upload_artifacts:
-        uses: ./.github/workflows/github-pages-build-and-upload-artifacts.yml
+    build_and_upload_artifacts_for_github_pages:
+        uses: ./.github/workflows/build-and-upload-artifacts-for-github-pages.yml
 
     deploy_to_github_pages:
         needs: build_and_upload_artifacts
-        uses: ./.github/workflows/github-pages-deploy.yml
+        uses: ./.github/workflows/deploy-to-github-pages.yml
         permissions:
             pages: write
             id-token: write

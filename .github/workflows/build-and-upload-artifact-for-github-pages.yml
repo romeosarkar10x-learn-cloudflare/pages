@@ -1,4 +1,4 @@
-name: Build and upload artifact
+name: Build and upload artifact for Github Pages
 
 on: workflow_call
 

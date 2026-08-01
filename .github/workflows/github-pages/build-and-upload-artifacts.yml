@@ -1,0 +1,36 @@
+name: Build and upload artifact
+on:
+    workflow_call:
+
+jobs:
+    build_and_upload_artifact:
+        runs-on: [ubuntu-latest]
+        name: Build and upload artifact
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v7
+
+            - name: Setup node
+              uses: actions/setup-node@v7
+              with:
+                  node-version: latest
+
+            - name: Setup pnpm
+              uses: pnpm/action-setup@v6
+              with:
+                  version: latest
+
+            - name: Install dependencies
+              run: pnpm install
+
+            - name: Build project
+              run: pnpm run build
+
+            - uses: actions/upload-pages-artifact@v4
+              name: Upload artifact
+              id: upload_pages_artifact
+              with:
+                  path: dist
+
+            - run: "echo Artifact ID: ${{ steps.upload_pages_artifact.outputs.artifact_id }}"
+              name: Echo artifact-id

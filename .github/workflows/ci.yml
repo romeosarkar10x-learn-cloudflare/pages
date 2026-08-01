@@ -11,3 +11,10 @@ jobs:
     type_check:
         needs: format_check
         uses: ./.github/workflows/type-check.yml
+
+    github_pages:
+        needs: type_check
+        uses: ./github/workflows/github-pages/ci.yml
+        permissions:
+            pages: write
+            id-token: write

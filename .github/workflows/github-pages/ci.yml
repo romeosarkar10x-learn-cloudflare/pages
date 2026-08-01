@@ -1,0 +1,16 @@
+name: Github Pages CI
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    build_and_upload_artifacts:
+        uses: ./github/workflows/github-pages/build-and-upload-artifacts.yml
+
+    type_check:
+        needs: build_and_upload_artifacts
+        uses: ./github/workflows/github-pages/deploy.yml
+        permissions:
+            pages: write
+            id-token: write

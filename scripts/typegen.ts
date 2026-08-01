@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import path from "node:path";
 import { getPages } from "./utils/get-pages.ts";
 import { BUILD_CONFIG } from "./config.ts";
 
@@ -11,6 +12,7 @@ async function typegen() {
     export type __CurrentRoute = keyof __PagesType;
     `;
 
+    fs.mkdirSync(path.basename(BUILD_CONFIG.TYPEGEN_OUT_FILE), { recursive: true });
     fs.writeFileSync(BUILD_CONFIG.TYPEGEN_OUT_FILE, contents);
 }
 

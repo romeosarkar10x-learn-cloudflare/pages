@@ -1,5 +1,3 @@
-import { hrefFor, NAV } from "../lib/site.js";
-
 type LayoutProps = {
     slug: string;
     title: string;
@@ -22,15 +20,18 @@ export function Layout({ slug, title, tagline, children }: LayoutProps) {
                 </a>
 
                 <nav className="site-nav">
-                    {NAV.map((item) => (
-                        <a
-                            key={item.slug}
-                            href={hrefFor(item.slug)}
-                            className={isActive(item.slug) ? "nav-link is-active" : "nav-link"}
-                        >
-                            {item.label}
-                        </a>
-                    ))}
+                    {Object.entries(__PAGES).map(
+                        ([
+                            route,
+                            {
+                                metadata: { slug, label },
+                            },
+                        ]) => (
+                            <a key={slug} href={route} className={isActive(slug) ? "nav-link is-active" : "nav-link"}>
+                                {label}
+                            </a>
+                        ),
+                    )}
                 </nav>
             </header>
 

@@ -6,14 +6,14 @@ import { mount } from "../../lib/mount.tsx";
 
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const ROUTES = [
+/* const ROUTES = [
     { path: "/", views: 4812, ms: 41 },
     { path: "/gallery", views: 2190, ms: 58 },
     { path: "/todos", views: 1744, ms: 47 },
     { path: "/clock", views: 1288, ms: 39 },
     { path: "/colors", views: 976, ms: 44 },
     { path: "/about", views: 733, ms: 36 },
-];
+]; */
 
 function series(): number[] {
     return DAYS.map(() => Math.round(30 + Math.random() * 70));
